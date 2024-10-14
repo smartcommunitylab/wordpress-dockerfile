@@ -54,5 +54,6 @@ jobs:
         with:
           platforms: ${{ matrix.platform }}
           file: dockerfiles/php-fpm-${{ matrix.version }}-Dockerfile
+          push: true
           labels: ${{ steps.meta.outputs.labels }}
           tags: ${{ steps.meta.outputs.tags }}
