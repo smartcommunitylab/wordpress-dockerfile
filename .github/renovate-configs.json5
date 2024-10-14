@@ -1,0 +1,20 @@
+{
+  "extends": ["config:best-practices"],
+  "onboarding": true,
+  "platform": "github",
+  "forkProcessing": "enabled",
+  "repositories": [
+    "smartcommunitylab/wordpress-dockerfile"
+  ],
+  "dockerfile": {
+    "fileMatch": ["(^|/|\.|\.*)([Dd]ocker|[Cc]ontainer)file$"]
+  },
+  "packageRules": [
+    {
+      "enabled": true,
+      "matchDatasources": [
+        "docker"
+      ]
+    }
+  ],
+}
