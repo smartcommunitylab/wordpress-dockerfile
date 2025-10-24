@@ -18,11 +18,11 @@ jobs:
         version:
           - healthcheck
           - redis
-        platform:
-          - linux/amd64
-          - linux/arm/v6
-          - linux/arm/v7
-          - linux/arm64/v8
+        # platform:
+        #   - linux/amd64
+        #   - linux/arm/v6
+        #   - linux/arm/v7
+        #   - linux/arm64/v8
     steps:
       - name: Log in to the Container registry
         uses: docker/login-action@5e57cd118135c172c3672efd75eb46360885c0ef # v3.6.0
@@ -47,7 +47,7 @@ jobs:
         id: build
         uses: docker/build-push-action@263435318d21b8e681c14492fe198d362a7d2c83 # v6
         with:
-          platforms: ${{ matrix.platform }}
+          platforms: linux/amd64,linux/arm/v6,linux/arm/v7,linux/arm64/v8
           file: dockerfiles/php-fpm-${{ matrix.version }}-Dockerfile
           push: true
           labels: ${{ steps.meta.outputs.labels }}
