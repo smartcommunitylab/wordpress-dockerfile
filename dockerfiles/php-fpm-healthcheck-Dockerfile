@@ -1,4 +1,4 @@
-FROM wordpress:6.8.3-php8.3-fpm-alpine
+FROM wordpress:6.8.3-php8.3-fpm-alpine@sha256:cd2e8c750f5e1c9cbea34d32389c9715d513dada30be8d6be989aff70861f62d
 RUN apk add --no-cache fcgi
 
 # Enable php fpm status page
